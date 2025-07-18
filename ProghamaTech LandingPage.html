@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProghamaTech Landing Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Your Custom Styles -->
+    <link rel="stylesheet" href="assets/css/proghama_main.css" />
+
+    <style>
+        /* === Hero Section Background === */
+        
+        #Home.hero-section {
+            background-image: url('assets/img/about-img.png');
+            /* TODO: Provide hero background image */
+            background-size: cover;
+            background-position: center;
+            min-height: 700px;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 3rem 0;
+        }
+        
+        #Home .container {
+            max-width: 900px;
+        }
+        /* Flex container for right side boxes and left side main text */
+        
+        #Home .hero-content {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Left main hero text */
+        
+        #Home .hero-text {
+            flex: 1 1 45%;
+        }
+        
+        #Home .hero-text h5 {
+            font-weight: 500;
+        }
+        
+        #Home .hero-text h1 {
+            font-weight: 900;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        
+        #Home .hero-text h1 span.text-danger {
+            color: #dc3545;
+            /* Bootstrap danger red */
+        }
+        
+        #Home .hero-text p.lead {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #f8f9facc;
+        }
+        /* Right side boxes container */
+        
+        #Home .hero-boxes {
+            flex: 1 1 45%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        /* Feature boxes (We Design, We Build) */
+        
+        #Home .feature-box {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 1rem;
+            padding: 2rem;
+            color: white;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgb(0 0 0 / 0.3);
+            cursor: default;
+            transition: transform 0.3s ease;
+        }
+        
+        #Home .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        /* Dark overlay on feature boxes for text readability */
+        
+        #Home .feature-box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 1rem;
+            z-index: 0;
+        }
+        
+        #Home .feature-box>* {
+            position: relative;
+            z-index: 1;
+        }
+        /* Specific backgrounds for each box */
+        
+        #Home .feature-box.design {
+            background-image: url('assets/img/we-design-bg.jpg');
+            /* TODO: Provide we-design-bg.jpg */
+        }
+        
+        #Home .feature-box.build {
+            background-image: url('assets/img/we-build-bg.jpg');
+            /* TODO: Provide we-build-bg.jpg */
+        }
+        /* Buttons under hero */
+        
+        #Home .btn-group {
+            margin-top: 2rem;
+        }
+        /* Responsive */
+        
+        .centralized {
+            text-align: center;
+        }
+        
+        @media (max-width: 991.98px) {
+            #Home.hero-section {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+            #Home .hero-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            #Home .hero-text,
+            #Home .hero-boxes {
+                flex: 1 1 100%;
+            }
+            #Home .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            #Home .feature-box {
+                min-height: 180px;
+            }
+        }
+        /* Backgrounds for other sections - placeholders if missing */
+        /* About Section Background */
+        /* TODO: Add background-image for About section here if available */
+        /* Services Section Background */
+        /* TODO: Add background-image for Services section here if available */
+        /* Contact Section Background */
+        
+        #Contact.py-5.bg-light {
+            background-image: url('assets/img/show-case.png');
+            /* Provided */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            position: relative;
+        }
+        
+        #Contact.py-5.bg-light .container {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* dark overlay */
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        #Contact .img-fluid.rounded {
+            display: none;
+            /* Remove the image because it's background now */
+        }
+        
+        #Contact input,
+        #Contact textarea {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="../ProghamaTech Landing Page/assets/img/Brand Name - Logo.png" alt="ProghamaTech Logo" height="40" /></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Services">Services</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-dark" href="#Contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero -->
+    <section id="Home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Left text block -->
+                <div class="hero-text">
+                    <h5><i class="fa-regular-400.tf"></i>  Transforming Ideas into Reality!</h5>
+                    <h1 class="fw-bold mb-3">WE DESIGN EXCEPTIONAL <br />DIGITAL EXPERIENCES </h1>
+                    <p class="lead mb-4">Empowering Startups and enterprises with intuitive, modern, and scalable UI/UX solutions. </p>
+
+                </div>
+                <!-- Right side feature boxes -->
+                <div class="hero-boxes">
+                    <div class="feature-box design">
+                        <h5 class="fw-bold">🎨 We Design!</h5>
+                        <p>Intuitive, modern, and scalable UI/UX design for startups and enterprises.</p>
+                    </div>
+                    <div class="feature-box build">
+                        <h5 class="fw-bold">💻 We Build!</h5>
+                        <p>Web &amp; mobile development solutions tailored to grow your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="centralized">
+        <h2 class="fw-bold mb-3">WE BUILD BEAUTIFUL &amp;
+            <span class="text-danger">SCALABLE</span><span class="text-danger"><span> <br> DIGITAL</span><br>EXPERIENCES
+        </h2>
+        <p class="text-muted mb-4">UI/UX Design – Web &amp; Mobile Development – Tech Training</p>
+        <div class="btn-group"><a href="#Contact" class="btn btn-danger btn-lg me-2">Let's Talk</a>
+            <a href="#Portfolio" class="btn btn-outline-dark btn-lg">See Our Work</a>
+        </div>
+    </div>
+    <!-- About -->
+    <section id="About" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">About <span class="text-danger">Proghama Tech</span></h2>
+            <div class="row align-items-center g-4">
+                <div class="col-md-6">
+                    <p>Proghama Tech is a creative and tech-driven agency based in Liberia, focused on empowering businesses and young talents through innovative web & mobile solutions, professional UI/UX design, and hands-on tech education. </p>
+                    <ul class="list-unstyled">
+                        <div class="row">
+                            <div class="col-6">
+                                <li>1. Innovation</li>
+                            </div>
+                            <div class="col-6">
+                                <li>3. Growth</li>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <li>2. Excellence</li>
+                            </div>
+                            <div class="col-6">
+                                <li>4. Integrity</li>
+                            </div>
+                        </div>
+                    </ul>
+
+                </div>
+                <div class="col-md-6"><img src="assets/img/about-img.png" alt="Team collaboration" class="img-fluid rounded" /></div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <section id="Services" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Our <span class="text-danger">Services</span></h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h4>Agency Services</h4>
+                    <ul class="list-unstyled">
+                        <div class="row">
+                            <div class="col-6">
+                                <li>Web Design</li>
+                                <li>Web Development</li>
+                            </div>
+                            <div class="col-6">
+                                <li>Mobile App Development</li>
+                                <li>Branding & Design</li>
+                            </div>
+
+                    </ul><img src="assets/img/pt-agency.png" alt="Agency Services" class="img-fluid rounded" />
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Academy Training</h4>
+                        <ul class="list-unstyled">
+                            <div class="row">
+                                <div class="col-6">
+                                    <li>Web Design Bootcamps</li>
+                                    <li>Frontend Development</li>
+                                </div>
+                                <div class="col-6">
+                                    <li>UI/UX Fundamentals</li>
+                                    <li>Private Mentorship</li>
+                                </div>
+                            </div>
+                        </ul><img src="assets/img/pt-academy.png" alt="Academy Training" class="img-fluid rounded" />
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Contact -->
+    <section id="Contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">Contact <span class="text-danger">Us</span></h2>
+            <div class="row align-items-center g-4">
+                <!-- Removed image since it's now background -->
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <div class="mb-3"><input type="text" class="form-control" id="name" placeholder="Name" required /></div>
+                        <div class="mb-3"><input type="email" class="form-control" id="email" placeholder="Email" required /></div>
+                        <div class="mb-3"><input type="text" class="form-control" id="subject" placeholder="Subject" required /></div>
+                        <div class="mb-3"><textarea class="form-control" id="message" rows="4" placeholder="Message" required></textarea></div><button type="submit" class="btn btn-danger">Send
+                            Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <!-- Blank or optional content -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">&copy; 2025 ProghamaTech. All Rights Reserved. </div>
+    </footer>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
